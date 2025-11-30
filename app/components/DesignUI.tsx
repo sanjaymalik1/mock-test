@@ -22,6 +22,14 @@ export default function DesignUI({
     }[];
 }) {
 
+    const imgCount = images.length
+    for(var i = imgCount ; i<=4; i++){
+        images.push({
+            url : "https://placehold.co/600x400/orange/white/png",
+            ready : true,
+            error : false,
+        })
+    }
     const [alert, setAlert] = useState(false)
 
 
@@ -33,18 +41,11 @@ export default function DesignUI({
 
                 <div className="z-4 rounded-full relative left-1 top-1 overflow-hidden h-[38px] w-[38px]">
                     {
-                        !images[0] ?
-                            <Image src={"https://placehold.co/600x400/orange/white/png"}
+                        images[0].ready ?
+                            <Image src={images[0].url}
                                 alt="photo"
                                 fill
-                                className="object-cover" /> : (
-                                images[0].ready ?
-                                    <Image src={images[0].url}
-                                        alt="photo"
-                                        fill
-                                        className="object-cover" /> :
-                                        <ImageLoader {...images[0]}/>
-                                )
+                                className="object-cover" /> : <ImageLoader {...images[0]}/>
 
                     }
 
@@ -52,54 +53,33 @@ export default function DesignUI({
                 </div>
                 <div className="z-3 rounded-full relative right-1 top-1 overflow-hidden h-[38px] w-[38px]">
                     {
-                        !images[1] ?
-                            <Image src={"https://placehold.co/600x400/orange/white/png"}
+                        images[1].ready ?
+                            <Image src={images[1].url}
                                 alt="photo"
                                 fill
-                                className="object-cover" /> : (
-                                images[1].ready ?
-                                    <Image src={images[1].url}
-                                        alt="photo"
-                                        fill
-                                        className="object-cover" /> :
-                                        <ImageLoader {...images[1]}/>
-                                )
+                                className="object-cover" /> : <ImageLoader {...images[1]}/>
 
                     }
 
                 </div>
                 <div className="z-2 rounded-full relative left-1 bottom-1 overflow-hidden h-[38px] w-[38px]">
                     {
-                        !images[2] ?
-                            <Image src={"https://placehold.co/600x400/orange/white/png"}
+                        images[2].ready ?
+                            <Image src={images[2].url}
                                 alt="photo"
                                 fill
-                                className="object-cover" /> : (
-                                images[2].ready ?
-                                    <Image src={images[2].url}
-                                        alt="photo"
-                                        fill
-                                        className="object-cover" /> :
-                                        <ImageLoader {...images[2]}/>
-                                )
+                                className="object-cover" /> : <ImageLoader {...images[2]}/>
 
                     }
 
                 </div>
                 <div className="z-1 rounded-full relative right-1 bottom-1 overflow-hidden h-[38px] w-[38px]">
                     {
-                        !images[3] ?
-                            <Image src={"https://placehold.co/600x400/orange/white/png"}
+                        images[3].ready ?
+                            <Image src={images[3].url}
                                 alt="photo"
                                 fill
-                                className="object-cover" /> : (
-                                images[3].ready ?
-                                    <Image src={images[3].url}
-                                        alt="photo"
-                                        fill
-                                        className="object-cover" /> :
-                                        <ImageLoader {...images[3]}/>
-                                )
+                                className="object-cover" /> : <ImageLoader {...images[3]}/>
 
                     }
 
