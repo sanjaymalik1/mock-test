@@ -26,5 +26,6 @@ export default function Page(){
     <div className="h-screen w-screen flex items-center justify-center">
       <DesignUI {...props}/>
     </div>
+    
   )
 }
